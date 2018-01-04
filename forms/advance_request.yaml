@@ -149,6 +149,12 @@ addMessage: { "modal":"Added Successfully" }
 editMessage: { "modal":"Updated Successfully" }
 fields:
   - _id: {"type": "hidden"}
-  - tab1: { "type": "tab", "name": "tab1", "titleNum": "1", "title": "Profile","class": "", "style": "width: 100%"}
-  - panel1: { "type": "panel", "tab": "tab1", "name": "ProfilePanel", "title": "Profile Info","class": "panel-mypanel","proceed":true}
-  - requestor: {"required": true, "keyfield": true, "col": "2", "panel": "ProfilePanel", "placeholder": "Name"}
+  - panel1: { type: panel, title: "Advance Request",class: "panel-mypanel"}
+  - requestor: {required: true, keyfield: true, col: 2, panel": panel1, autocomplete: true }
+  - requestorDept: {col: 2, panel: panel1, disabled: true, readonly: true}
+  - entity: {col: 2, panel: panel1, required: true}
+  - booksOfAccount: {col: 2, panel: panel1, required: true}
+  - partyName: {col: 2, panel: panel1, required: true}
+  - mode: {col: 2, panel: panel1, required: true}
+  - amount: {col: 2, panel: panel1, required: true}
+  - purpose: {col: 2, panel: panel1, required: true}

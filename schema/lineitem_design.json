@@ -18,7 +18,8 @@
     "label": "Requestor",
     "required": 0,
     "optsDB": {
-      "collection": "users",
+      "collname": "users",
+      "condition": "{\"status\": \"Yes\"}",
       "fields": ["email", "email"]
     },
     "type": "select"
@@ -29,7 +30,8 @@
     "label": "Requestor Dept",
     "required": 0,
     "optsDB": {
-      "collection": "depts",
+      "collname": "depts",
+      "condition": "{}",
       "fields": ["dept", "dept"]
     },
     "type": "select"
@@ -40,7 +42,8 @@
     "label": "Entity",
     "required": 0,
     "optsDB": {
-      "collection": "entity",
+      "collname": "entity",
+      "condition": "{}",
       "fields": ["entity", "entity"]
     },
     "type": "select"
@@ -51,7 +54,8 @@
     "label": "Books of Account",
     "required": 0,
     "optsDB": {
-      "collection": "booksOfAccount",
+      "collname": "booksOfAccount",
+      "condition": "{}",
       "fields": ["booksOfAccount", "booksOfAccount"]
     },
     "type": "select"
@@ -62,7 +66,8 @@
     "label": "Party Name",
     "required": 0,
     "optsDB": {
-      "collection": "party",
+      "collname": "party",
+      "condition": "{}",
       "fields": ["name", "name"]
     },
     "type": "select"
@@ -73,6 +78,14 @@
     "label": "Amount",
     "required": 0,
     "type": "number"
+  },
+  "purpose": {
+    "editable": true,
+    "helptxt": "Purpose",
+    "label": "Purpose",
+    "required": 0,
+    "format": "textarea",
+    "type": "string"
   },
   "mode": {
     "editable": true,
@@ -113,7 +126,8 @@
       "label": "Approved By",
       "required": 0,
       "optsDB": {
-        "collection": "users",
+        "collname": "users",
+        "condition": "{\"status\": \"Yes\"}",
         "fields": ["email", "email"]
       },
       "type": "select"
