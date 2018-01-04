@@ -12,7 +12,7 @@
     "editable": true, 
     "helptxt": "Password of the user", 
     "label": "Password", 
-    "required": 1, 
+    "required": 0, 
     "type": "password"
   }, 
   "gmailpwd": {
@@ -33,7 +33,7 @@
     "editable": true, 
     "helptxt": "Mobile number of the user", 
     "label": "Mobile", 
-    "required": 1, 
+    "required": 0, 
     "type": "string"
   },
   "status": {
@@ -53,7 +53,7 @@
       "None": "None",
       "Admin": "Admin"
     }, 
-    "required": 1, 
+    "required": 0, 
     "type": "select"
   },
   "roles": {
