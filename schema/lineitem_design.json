@@ -21,7 +21,7 @@
     "optsDB": {
       "collname": "users",
       "condition": "{\"status\": \"Yes\"}",
-      "fields": ["email", "email"]
+      "fields": "[\"email\", \"email\"]"
     },
     "type": "select"
   },
@@ -34,7 +34,7 @@
     "optsDB": {
       "collname": "depts",
       "condition": "{}",
-      "fields": ["dept", "dept"]
+      "fields": "[\"dept\", \"dept\"]"
     },
     "type": "select"
   },
@@ -47,7 +47,7 @@
     "optsDB": {
       "collname": "entity",
       "condition": "{}",
-      "fields": ["entity", "entity"]
+      "fields": "[\"entity\", \"entity\"]"
     },
     "type": "select"
   },
@@ -60,7 +60,7 @@
     "optsDB": {
       "collname": "booksOfAccount",
       "condition": "{}",
-      "fields": ["booksOfAccount", "booksOfAccount"]
+      "fields": "[\"booksOfAccount\", \"booksOfAccount\"]"
     },
     "type": "select"
   },
@@ -73,7 +73,7 @@
     "optsDB": {
       "collname": "party",
       "condition": "{}",
-      "fields": ["name", "name"]
+      "fields": "[\"name\", \"name\"]"
     },
     "type": "select"
   },
@@ -134,7 +134,7 @@
       "optsDB": {
         "collname": "users",
         "condition": "{\"status\": \"Yes\"}",
-        "fields": ["email", "email"]
+        "fields": "[\"email\", \"email\"]"
       },
       "type": "select"
     },
