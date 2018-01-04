@@ -32,7 +32,7 @@
     "required": 0,
     "options": { },
     "optsDB": {
-      "collname": "depts",
+      "collname": "dept",
       "condition": "{}",
       "fields": "[\"dept\", \"dept\"]"
     },

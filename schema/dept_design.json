@@ -1,0 +1,11 @@
+{
+  "_id": "dept_design",
+  "_idfield": "_id",
+  "replace": "{{include_created_modified.js}}",
+  "replace": "{{include_sync.js}}",
+  "dept": { "type": "string", "label": "Dept Name", "key": 1 },
+  "lead": { "type": "string", "label": "Dept Lead" },
+  "group": { "type": "string", "label": "Group" },
+  "gc": { "type": "string", "label": "GC" },
+  "deptCoordinator": { "type": "string", "label": "Dept Coordinator" }
+}
