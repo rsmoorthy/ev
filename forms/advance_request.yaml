@@ -1,9 +1,9 @@
-collName: blacklist
+collName: lineitem
 mode: window
 window: {size: "90%", modal: true, resizable: true, draggable: true}
 xelectPlugin: chosen
 themeForm: bootstrap2
-header: "<h2>Add Incident</h2>"
+header: "<h2>Advance Request</h2>"
 css:
   cssText:
     - |
@@ -141,8 +141,8 @@ css:
     ".buttonsRow input[type=submit]": { "addClass": "btn-lg", "width": "300px","height": "2cm" }
     "button[name=proceed]": { "removeClass": "btn-primary", "addClass": "mybutton"}
 loadAfterSave: false
-addButton: Add Incident
-editButton: Add / Update Incident
+addButton: Advance Request
+editButton: Update Request
 resetAfterAdd: reset
 resetAfterEdit: reset
 addMessage: { "modal":"Added Successfully" }
@@ -151,32 +151,4 @@ fields:
   - _id: {"type": "hidden"}
   - tab1: { "type": "tab", "name": "tab1", "titleNum": "1", "title": "Profile","class": "", "style": "width: 100%"}
   - panel1: { "type": "panel", "tab": "tab1", "name": "ProfilePanel", "title": "Profile Info","class": "panel-mypanel","proceed":true}
-  - name: {"required": true, "keyfield": true, "col": "2", "panel": "ProfilePanel", "placeholder": "Name"}
-  - gender: {"required": true, "keyfield": true, "col": "2","rcols": 2, "panel": "ProfilePanel", "placeholder": "gender", "type": "radio", "options": {"":"","M": "M", "F": "F"}}
-  - mobile: {"required": true, "keyfield": true, "col": "2", "panel": "ProfilePanel","placeholder": "Mobile No"}
-  - email: {"required": false, "keyfield": false, "col": "2", "panel": "ProfilePanel","placeholder": "Email id"}
-  - nationality: {"required": true, "keyfield": true, "col": "2", "panel": "ProfilePanel"}
-  - country: {"required": true, "keyfield": true, "col": "2", "tab": "tab1", "panel": "ProfilePanel"}
-  - address: {"required": false, "col": "2", "tab": "tab1", "panel": "ProfilePanel", "placeholder": "Enter your address"}
-  - state: {"required": false, "col": "2", "tab": "tab1", "panel": "ProfilePanel", "placeholder": "State"}
-  - city: {"required": false, "col": "2", "tab": "tab1", "panel": "ProfilePanel", "placeholder": "City"}
-  - pincode: {"required": false, "col": "2", "tab": "tab1", "panel": "ProfilePanel", "placeholder": "pincode", "label": "Pincode / Zipcode"}
-  - photo: {"required": false,"panel": "ProfilePanel", "col": "2", "settings": {"displayWidth": 160,"imageWidth": 640,"imageHeight":320,"minImageWidth": 160 }, "webcam": { "width": 320,"height": 320},"cropImage": {"width": 320 },"rotateImage":true,"label": "Photo"}
-  - idcardImage: {"required": false,"panel": "ProfilePanel","col": "2", "settings": {"displayWidth": 160,"imageWidth": 640,"imageHeight":320,"minImageWidth": 160 }, "webcam": { "width": 320,"height": 320},"cropImage": {"width": 320 },"rotateImage":true,"label": "ID Proof Image"}
-  - idcardType: {"required": false, "col": "2", "panel": "ProfilePanel", "placeholder": "ID Proof Type", "label": "ID Proof Type"}
-
-  - tab2: { "type": "tab", "name": "tab2", "titleNum": "2", "title": "Incidents","class": "", "style": "width: 100%","proceed":true}
-  - panel2: {"type": "panel","tab": "tab2","name": "incidents","title":"Incidents (Click + to add more incidents)","multi": "array","class": "panel-primary" ,"proceed":true}
-  - incidents.0._id: {"type": "hidden", "required": false, "panel": "incidents"}
-  - incidents.0.incidentType: {"required": true, "panel": "incidents","col": "2"}
-  - incidents.0.severity: {"required": true, "panel": "incidents","col": "2", "type": "radio", "rcols": "3" }
-  - incidents.0.description: {"required": true,"panel": "incidents","col": "2"}
-  - incidents.0.incidentDate: {"required": true,"panel": "incidents","col": "2"}
-  - incidents.0.reportedBy: {"required": true,"panel": "incidents","col": "2"}
-  - incidents.0.handledBy: {"required": false,"panel": "incidents","col": "2"}
-  - incidents.0.incidentDept: {"required": false,"panel": "incidents","col": "2"}
-
-  - tab3: { "type": "tab", "name": "tab3", "titleNum": "3", "title": "Status","class": "", "style": "width: 100%"}
-  - panel3: {"type": "panel","tab": "tab3","title":"Status","class": "panel-primary"}
-  - status: {"type": "radio", "panel":"panel3", "col": "2", "required": true, "rcols": 3 }
-  - expiryDate: {"panel":"panel3", "col": "2", "required": false }
+  - requestor: {"required": true, "keyfield": true, "col": "2", "panel": "ProfilePanel", "placeholder": "Name"}
