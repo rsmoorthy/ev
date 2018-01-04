@@ -1,0 +1,143 @@
+{
+  "_id": "lineitem_design",
+  "_idfield": "_id",
+  "type": {
+    "editable": true,
+    "helptxt": "Type",
+    "label": "Type",
+    "required": 0,
+    "options": {
+      "": "",
+      "AdvanceRequest": "AdvanceRequest"
+    },
+    "type": "select"
+  },
+  "requestor": {
+    "editable": true,
+    "helptxt": "Requestor",
+    "label": "Requestor",
+    "required": 0,
+    "optsDB": {
+      "collection": "users",
+      "fields": ["email", "email"]
+    },
+    "type": "select"
+  },
+  "requestorDept": {
+    "editable": true,
+    "helptxt": "Requestor Dept",
+    "label": "Requestor Dept",
+    "required": 0,
+    "optsDB": {
+      "collection": "depts",
+      "fields": ["dept", "dept"]
+    },
+    "type": "select"
+  },
+  "entity": {
+    "editable": true,
+    "helptxt": "Entity",
+    "label": "Entity",
+    "required": 0,
+    "optsDB": {
+      "collection": "entity",
+      "fields": ["entity", "entity"]
+    },
+    "type": "select"
+  },
+  "booksOfAccount": {
+    "editable": true,
+    "helptxt": "Books of Account",
+    "label": "Books of Account",
+    "required": 0,
+    "optsDB": {
+      "collection": "booksOfAccount",
+      "fields": ["booksOfAccount", "booksOfAccount"]
+    },
+    "type": "select"
+  },
+  "partyName": {
+    "editable": true,
+    "helptxt": "Party Name",
+    "label": "Party Name",
+    "required": 0,
+    "optsDB": {
+      "collection": "party",
+      "fields": ["name", "name"]
+    },
+    "type": "select"
+  },
+  "amount": {
+    "editable": true,
+    "helptxt": "Amount",
+    "label": "Amount",
+    "required": 0,
+    "type": "number"
+  },
+  "mode": {
+    "editable": true,
+    "helptxt": "Mode of Payment",
+    "label": "Payment Mode",
+    "options": {
+      "": "",
+      "DD": "DD",
+      "BankDeposit": "BankDeposit",
+      "ECS": "ECS",
+      "Cheque": "Cheque",
+      "CreditCard": "CreditCard",
+      "Cash": "Cash",
+      "Online": "Online",
+      "eTransfer": "eTransfer",
+      "NEFT/RTGS": "NEFT/RTGS"
+    },
+    "required": 0,
+    "type": "select"
+  },
+  "approvals": {
+    "_sub": 1,
+    "_type": "array",
+    "_id": {
+      "editable": true,
+      "helptxt": "approvals id",
+      "label": "approvals id",
+      "required": 0,
+      "implicit": {
+        "add": "always",
+        "edit": "none"
+      },
+      "type": "id"
+    },
+    "approvedBy": {
+      "editable": true,
+      "helptxt": "Approved By",
+      "label": "Approved By",
+      "required": 0,
+      "optsDB": {
+        "collection": "users",
+        "fields": ["email", "email"]
+      },
+      "type": "select"
+    },
+    "approvedDate": {
+      "editable": true,
+      "helptxt": "Approved Date",
+      "label": "Approved Date",
+      "required": 0,
+      "type": "date"
+    },
+    "approvedMode": {
+      "editable": true,
+      "helptxt": "Approved Mode",
+      "label": "Approved Mode",
+      "required": 0,
+      "options": {
+        "": "",
+        "Online": "Online",
+        "Email": "Email",
+        "SMS": "SMS",
+        "Signature": "Signature"
+      },
+      "type": "select"
+    }
+  }
+}

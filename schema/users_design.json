@@ -1,0 +1,117 @@
+{
+  "_id": "users_design", 
+  "_idfield": "_id", 
+  "email": {
+    "editable": true, 
+    "helptxt": "Email of the user", 
+    "label": "Email", 
+    "required": 0, 
+    "type": "email"
+  }, 
+  "password": {
+    "editable": true, 
+    "helptxt": "Password of the user", 
+    "label": "Password", 
+    "required": 1, 
+    "type": "password"
+  }, 
+  "gmailpwd": {
+    "editable": true, 
+    "helptxt": "Google Password of user", 
+    "label": "Google Password", 
+    "required": 0, 
+    "type": "string"
+  }, 
+  "fullname": {
+    "editable": true, 
+    "helptxt": "Name of the user", 
+    "label": "Fullname", 
+    "required": 0, 
+    "type": "string"
+  },
+  "mobile": {
+    "editable": true, 
+    "helptxt": "Mobile number of the user", 
+    "label": "Mobile", 
+    "required": 1, 
+    "type": "string"
+  },
+  "status": {
+    "editable": true, 
+    "type": "select",
+    "required": 0,
+    "options": {"": "", "Yes": "Yes", "No": "No" },
+    "helptxt": "Status",
+    "label": "Status"
+  },
+  "role": {
+    "editable": true, 
+    "helptxt": "Role of the user", 
+    "label": "Role", 
+    "options": {
+      "": "",
+      "None": "None",
+      "Admin": "Admin"
+    }, 
+    "required": 1, 
+    "type": "select"
+  },
+  "roles": {
+    "editable": true, 
+    "helptxt": "Roles of the user", 
+    "label": "Roles", 
+    "multiple": true,
+    "options": {
+      "None": "None",
+      "Admin": "Admin"
+    }, 
+    "required": 0, 
+    "type": "select"
+  },
+  "added_by": {
+    "editable": false, 
+    "helptxt": "Added By", 
+    "label": "WhoAdded", 
+    "required": 0, 
+    "implicit": {
+      "add": "always",
+      "edit": "none"
+    },
+    "value": "_user",
+    "type": "string"
+  }, 
+  "added_at": {
+    "editable": false, 
+    "helptxt": "Date of Addition", 
+    "label": "Added at", 
+    "required": 0, 
+    "format": "Y-m-d",
+    "implicit": {
+      "add": "always",
+      "edit": "none"
+    },
+    "type": "date"
+  }, 
+  "authcode": {
+    "editable": true, 
+    "helptxt": "Authcode", 
+    "label": "Authcode", 
+    "required": 0, 
+    "implicit": {
+      "add": "always",
+      "edit": "none"
+    },
+    "type": "authcode"
+  }, 
+  "encryptkey": {
+    "editable": true, 
+    "helptxt": "encryptkey", 
+    "label": "encryptkey", 
+    "required": 0, 
+    "implicit": {
+      "add": "always",
+      "edit": "none"
+    },
+    "type": "encryptkey"
+  }
+}

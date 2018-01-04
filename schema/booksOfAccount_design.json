@@ -1,0 +1,39 @@
+{
+    "_id": "booksOfAccount_design",
+    "_idfield": "_id",
+    {{include_created_modified.js}}
+    {{include_sync.js}}
+	"booksOfAccount": {
+		"editable": true,
+		"label": "Books of Account",
+		"helptxt": "Books of Account or Company",
+		"key": 1,
+		"type": "string"
+    },
+	"entity": {
+		"editable": true,
+		"label": "Entity",
+		"helptxt": "Entity or Division",
+		"options": {
+		},
+		"optsDB": {
+			"collname": "entity",
+			"condition": "{}",
+			"fields": "[\"entity\", \"entity\"]"
+		},
+		"type": "select"
+    },
+	"branch": {
+		"editable": true,
+		"label": "Branch",
+		"helptxt": "Branch",
+		"type": "string"
+    },
+    "tallyPosting": {
+		"editable": true,
+		"label": "TallyPosting",
+		"helptxt": "Tally Posting",
+		"required": 0,
+		"type": "string"
+    }
+}

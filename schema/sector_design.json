@@ -1,0 +1,26 @@
+{
+    "_id": "sector_design",
+    "_idfield": "_id",
+  "replace":  "{{include_created_modified.js}}",
+  "replace": "{{include_sync.js}}",
+  "sector": {
+    "editable": true,
+    "label": "Sector",
+    "helptxt": "Sector",
+    "key": 1,
+    "type": "string"
+    },
+  "zone": {
+    "editable": true,
+    "label": "Zone",
+    "helptxt": "Zone",
+    "options": {
+    },
+    "optsDB": {
+      "collname": "zone",
+      "condition": "{}",
+      "fields": "[\"zone\", \"zone\"]"
+    },
+    "type": "select"
+    }
+}

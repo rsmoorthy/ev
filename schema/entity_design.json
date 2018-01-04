@@ -1,0 +1,53 @@
+{
+    "_id": "entity_design",
+    "_idfield": "_id",
+    {{include_created_modified.js}}
+    {{include_sync.js}}
+	"legalEntity": {
+		"editable": true,
+		"label": "Legal Entity",
+		"helptxt": "Legal Entity (Actual Legal Entity or Trust name)",
+		"type": "string"
+    },
+	"entity": {
+		"editable": true,
+		"label": "Entity",
+		"helptxt": "Entity or Division",
+		"key": 1,
+		"type": "string"
+    },
+	"template": {
+		"editable": true,
+		"label": "Template Name",
+		"helptxt": "Template Name",
+		"type": "string"
+    },
+	"placement": {
+		"editable": true,
+		"label": "Placement",
+		"helptxt": "Signature Placement in PDF Ereceipt",
+		"type": "string"
+    },
+	"prefix": {
+		"editable": true,
+		"label": "Prefix",
+		"helptxt": "Prefix - 2digit",
+		"type": "string"
+  },
+  "GSTIN": {
+    "editable": true,
+    "label": "GSTIN",
+    "helptxt": "GSTIN",
+    "type": "string"
+  },
+    "team": {
+      "editable": true,
+      "label": "Team",
+      "helptxt": "Team",
+      "type": "select",
+      "options":{
+          "Finance":"Finance",
+          "Outreach":"Outreach",
+    }
+  }
+}

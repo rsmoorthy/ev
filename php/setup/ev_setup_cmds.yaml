@@ -1,0 +1,68 @@
+# Commands specification here
+# This is YAML file. No tabs here. Instead of tabs, use 4 spaces
+# Configure your editor to replace tabs with 4 spaces for YAML file
+commands:
+    ev setup initial dev:
+        help: Dev ev setup
+        cmds:
+            - ev setup users
+            - ev setup iConfig basic
+            - ev setup iConfig goaproxy
+            - ev setup reports basic
+    ev setup users:
+        help: Sets up Sync users config
+        cmds:
+            -   users add admin@journo.in journo123 Admin 1234567890 Admin
+            -   users register confirm admin@journo.in
+            -   users add journo@rsmoorthy.net journo123 None 1234567891 "Journo Mail Sender"
+            -   users disable journo@rsmoorthy.net
+            -   users gmail password journo@rsmoorthy.net journo!$Best
+    ev setup iConfig basic:
+        help: Sets up Sync iConfig basic values
+        cmds:
+            -   iConfig set root RegisterEmail journo@rsmoorthy.net
+            -   iConfig set root Modules ev
+            -   iConfig set root MenuJson ev/menu.json
+            -   iConfig set root MenuTitle "ev Journo Dev"
+            -   iConfig set root Title "ev Journo Dev"
+            -   iConfig set pagekey abcdefabcdef "PageKey General"
+    ev setup iConfig goaproxy:
+        help: Sets up Sync GOA Proxy for Google Signin even from localhost
+        cmds:
+            -   iConfig set root GOAProxy_URL "http://journo.rsmoorthy.net/oauth2callback/index.php"
+            -   iConfig set root GOAProxy_API_KEY "goaproxy1234"
+    ev setup reports basic:
+        help: Creates basic reports and templates
+        cmds:
+            -   ev setup tmpl deleterecord "Delete Record"
+            -   ev setup report iconfig iConfig
+            -   ev setup report manageusers "Manage Users"
+            -   ev setup report pagekeygeneral "PageKey General"
+    ev setup tmpl deleterecord $name:
+        help: tmpl deleterecord. Set name="Delete Record"
+        db:
+            collection: tmpl
+            method: add
+            keyfields: ["name"]
+            fields: { "name" : "Delete Record", "type" : "actions", "db" : "users", "email_from" : "", "email_cc" : "", "email_bcc" : "", "email_gdocs_name" : "", "email_gdocs_userid" : "", "email_attachments" : "", "email_subject" : "", "actions" : { "deleterecord" : "Delete Record" }, "sendbutton" : "", "showbutton" : "", "multiple" : "", "namefield" : "", "emailfield" : "", "sms_msg" : "", "email_text" : "", "sms_senderid" : "", "email_var1_name" : "", "email_var1_val" : "", "email_var2_name" : "", "email_var2_val" : "", "email_var3_name" : "", "email_var3_val" : "", "email_var4_name" : "", "email_var4_val" : "", "email_var5_name" : "", "email_var5_val" : "", "trdate" : "transact.date", "trtype" : "", "trmode" : "", "trsubject" : "", "autoupdate" : "", "checkcond" : "", "filterRules" : [ ]   }
+    ev setup report iconfig $name:
+        help: report iConfig
+        db:
+            collection: reports
+            method: add
+            keyfields: ["name"]
+            fields: { "name" : "iConfig", "type" : "grid", "db" : "iConfig", "tmpls" : null, "tmpl_India" : "", "tmpl_US" : "", "tmpl_UK" : "", "tmpl_LB" : "", "tmpl_SG" : "", "gridColKeys" : [ "type", "key", "value", "label", "description" ], "props" : { "type" : { "hide" : "No", "width" : "", "heading" : "", "editable" : "Yes", "summary" : "", "superfilter" : "", "roles" : null }, "key" : { "hide" : "No", "width" : "", "heading" : "", "editable" : "Yes", "summary" : "", "superfilter" : "", "roles" : null }, "value" : { "hide" : "No", "width" : "", "heading" : "", "editable" : "Yes", "summary" : "", "superfilter" : "", "roles" : null }, "label" : { "hide" : "No", "width" : "", "heading" : "", "editable" : "Yes", "summary" : "", "superfilter" : "", "roles" : null }, "description" : { "hide" : "No", "width" : "", "heading" : "", "editable" : "Yes", "summary" : "", "superfilter" : "", "roles" : null } }, "gridColModel" : [ { "name" : "type", "sortable" : "true" }, { "name" : "key", "sortable" : "true" }, { "name" : "value", "sortable" : "true" }, { "name" : "label", "sortable" : "true" }, { "name" : "description", "sortable" : "true" } ], "gridColNames" : [ "type", "key", "value", "label", "description" ], "idfield" : "_id", "subgrid" : "", "subgrid_report" : "", "api_condfield" : "", "viewroles" : null, "editroles" : null, "dbs" : null, "splice" : "", "viewablecheck" : "", "editablecheck" : "", "extrajs_onload" : "", "extrajs_loadcomplete" : "", "cmenu" : [ { "name" : "", "url" : "", "viewin" : "popup" }, { "name" : "", "url" : "", "viewin" : "popup" }, { "name" : "", "url" : "", "viewin" : "popup" }, { "name" : "", "url" : "", "viewin" : "popup" }, { "name" : "", "url" : "", "viewin" : "popup" }, { "name" : "", "url" : "", "viewin" : "popup" }, { "name" : "", "url" : "", "viewin" : "popup" } ], "cssrc" : [ { "cond" : "", "css" : "", "apply" : "cell" }, { "cond" : "", "css" : "", "apply" : "cell" }, { "cond" : "", "css" : "", "apply" : "cell" } ], "qfilter" : [ ], "subgridcols" : null, "popupcols" : null, "sortfield" : "", "sortdir" : "", "cmenustd" : "", "filterRules" : [ ] }
+    ev setup report manageusers $name:
+        help: report manageusers. Set name="Manage Users"
+        db:
+            collection: reports
+            method: add
+            keyfields: ["name"]
+            fields: { "name" : "Manage Users", "type" : "grid", "db" : "users", "tmpls" : [ "Delete Record" ], "tmpl_India" : "", "tmpl_US" : "", "tmpl_UK" : "", "tmpl_LB" : "", "tmpl_SG" : "", "gridColKeys" : [ "email", "fullname", "mobile", "role", "roles", "status" ], "props" : { "email" : { "hide" : "No", "width" : NumberLong(140), "heading" : "", "editable" : "No", "summary" : "", "superfilter" : "", "roles" : null }, "fullname" : { "hide" : "No", "width" : NumberLong(140), "heading" : "", "editable" : "Yes", "summary" : "", "superfilter" : "", "roles" : null }, "mobile" : { "hide" : "No", "width" : NumberLong(140), "heading" : "", "editable" : "Yes", "summary" : "", "superfilter" : "", "roles" : null }, "role" : { "hide" : "No", "width" : NumberLong(140), "heading" : "", "editable" : "Yes", "summary" : "", "superfilter" : "", "roles" : null }, "roles" : { "hide" : "No", "width" : NumberLong(142), "heading" : "", "editable" : "Yes", "summary" : "", "superfilter" : "", "roles" : null }, "status" : { "hide" : "No", "width" : "", "heading" : "", "editable" : "Yes", "summary" : "", "superfilter" : "", "roles" : null } }, "gridColModel" : [ { "name" : "email", "sortable" : "true", "width" : "143", "label" : "" }, { "name" : "fullname", "sortable" : "true", "width" : "143", "editable" : true, "label" : "" }, { "name" : "mobile", "sortable" : "true", "width" : "143", "editable" : true, "label" : "" }, { "name" : "role", "sortable" : "true", "width" : "143", "editable" : true, "label" : "" }, { "name" : "roles", "sortable" : "true", "width" : "145", "editable" : true, "label" : "" }, { "name" : "status", "sortable" : "true" } ], "gridColNames" : [ "email", "fullname", "mobile", "role", "roles", "status" ], "idfield" : "_id", "subgrid" : "", "subgrid_report" : "", "api_condfield" : "", "viewroles" : [ "Admin" ], "editroles" : [ "Admin" ], "dbs" : null, "splice" : "", "viewablecheck" : "", "editablecheck" : "", "extrajs_onload" : "", "extrajs_loadcomplete" : "", "cmenu" : [ { "name" : "", "url" : "", "viewin" : "popup" }, { "name" : "", "url" : "", "viewin" : "popup" }, { "name" : "", "url" : "", "viewin" : "popup" }, { "name" : "", "url" : "", "viewin" : "popup" }, { "name" : "", "url" : "", "viewin" : "popup" }, { "name" : "", "url" : "", "viewin" : "popup" }, { "name" : "", "url" : "", "viewin" : "popup" } ], "cssrc" : [ { "cond" : "", "css" : "", "apply" : "cell" }, { "cond" : "", "css" : "", "apply" : "cell" }, { "cond" : "", "css" : "", "apply" : "cell" } ], "qfilter" : [ ], "subgridcols" : null, "popupcols" : null, "sortfield" : "", "sortdir" : "", "cmenustd" : "", "filterRules" : [ ], "qfilter_none" : "Yes", "extrajs_url" : "", "cmenushowemailsms" : ""  }
+    ev setup report pagekeygeneral $name:
+        help: report pagekeygeneral. Set name="PageKey General"
+        db:
+            collection: reports
+            method: add
+            keyfields: ["name"]
+            fields: {"name":"PageKey General","type":"grid","db":"iConfig","tmpls":[""],"tmpl_India":"","tmpl_US":"","tmpl_UK":"","tmpl_LB":"","tmpl_SG":"","gridColKeys":["type"],"gridColNames":["type"],"idfield":"_id","subgrid":"","subgrid_report":"","api_condfield":"","viewroles":null,"editroles":null,"dbs":null,"splice":"","viewablecheck":"Yes","editablecheck":"Yes","extrajs_onload":"","extrajs_loadcomplete":"","subgridcols":null,"popupcols":null,"sortfield":"","sortdir":"","cmenustd":"","gridColModel":[{"name":"type","sortable":"true"}],"cmenu":[{"name":"","url":"","viewin":"popup"},{"name":"","url":"","viewin":"popup"},{"name":"","url":"","viewin":"popup"},{"name":"","url":"","viewin":"popup"},{"name":"","url":"","viewin":"popup"},{"name":"","url":"","viewin":"popup"},{"name":"","url":"","viewin":"popup"}],"cssrc":[{"cond":"","css":"","apply":"cell"},{"cond":"","css":"","apply":"cell"},{"cond":"","css":"","apply":"cell"}]}

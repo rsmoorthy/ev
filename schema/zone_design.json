@@ -1,0 +1,13 @@
+{
+    "_id": "zone_design",
+    "_idfield": "_id",
+  "replace":  "{{include_created_modified.js}}",
+  "replace": "{{include_sync.js}}",
+  "zone": {
+    "editable": true,
+    "label": "Zone",
+    "helptxt": "Zone",
+    "key": 1,
+    "type": "string"
+    }
+}

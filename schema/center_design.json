@@ -1,0 +1,40 @@
+{
+    "_id": "center_design",
+    "_idfield": "_id",
+  "replace":  "{{include_created_modified.js}}",
+  "replace": "{{include_sync.js}}",
+  "center": {
+    "editable": true,
+    "label": "Center",
+    "helptxt": "Center",
+    "key": 1,
+    "required": 0,
+    "type": "string"
+    },
+  "sector": {
+    "editable": true,
+    "label": "Sector",
+    "helptxt": "Sector",
+    "required": 0,
+    "options": {
+    },
+    "optsDB": {
+      "collname": "sector",
+      "condition": "{}",
+      "fields": "[\"sector\", \"sector\"]"
+    },
+    "type": "select"
+    },
+  "isDept": {
+    "editable": true,
+    "label": "Is Dept",
+    "helptxt": "Is Department",
+    "required": 0,
+    "options": {
+      "": "",
+      "Yes": "Yes",
+      "No": "No"
+    },
+    "type": "select"
+    }
+}
