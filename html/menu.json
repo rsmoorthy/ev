@@ -4,8 +4,13 @@
     { "id": "002", "menu": "Line Items", "url": "", "level": "0", "parent": "", "isLeaf": false, "expanded": "false", "roles": ["Admin"] },
     { "id": "003", "menu": "List", "url": "/html/reports.html?name=Line+Items", "level": "1", "parent": "002", "isLeaf": true, "expanded": "false" },
 
+    { "id": "800", "menu": "Masters", "url": "", "level": "0", "parent": "", "isLeaf": false, "expanded": "false", "roles": ["Admin"] },
+    { "id": "810", "menu": "Entity", "url": "/html/reports.html?name=Entity;toaddemptyrow=1", "level": "1", "parent": "800", "isLeaf": true, "expanded": "false" },
+    { "id": "820", "menu": "Books of Account", "url": "/html/reports.html?name=Books+of+Account;toaddemptyrow=1", "level": "1", "parent": "800", "isLeaf": true, "expanded": "false" },
+    { "id": "830", "menu": "Party", "url": "/html/reports.html?name=Party;toaddemptyrow=1", "level": "1", "parent": "800", "isLeaf": true, "expanded": "false" },
+
     { "id": "900", "menu": "Admin", "url": "", "level": "0", "parent": "", "isLeaf": false, "expanded": "false", "roles": ["Admin"] },
-    { "id": "901", "menu": "Manage Users", "url": "/html/reports.html?name=Manage+Users", "level": "1", "parent": "900", "isLeaf": true, "expanded": "false" },
+    { "id": "901", "menu": "Manage Users", "url": "/html/reports.html?name=Manage+Users;toaddemptyrow=1", "level": "1", "parent": "900", "isLeaf": true, "expanded": "false" },
     { "id": "902", "menu": "Manage Grids", "url": "/admin/view_design_crud.html", "level": "1", "parent": "900", "isLeaf": true, "expanded": "false" },
     { "id": "903", "menu": "Manage Templates", "url": "/admin/tmpl_design.html", "level": "1", "parent": "900", "isLeaf": true, "expanded": "false" },
     { "id": "904", "menu": "Gdocs Cache Invalidate", "url": "/admin/invcache.php", "level": "1", "parent": "900", "isLeaf": true, "expanded": "false" },

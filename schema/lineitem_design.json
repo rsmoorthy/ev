@@ -111,6 +111,13 @@
     "required": 0,
     "type": "select"
   },
+  "dummyId": {
+    "editable": true,
+    "helptxt": "dummyId",
+    "label": "dummyId",
+    "required": 0,
+    "type": "string"
+  },
   "approvals": {
     "_sub": 1,
     "_type": "array",

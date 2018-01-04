@@ -149,6 +149,7 @@ addMessage: { "modal":"Added Successfully" }
 editMessage: { "modal":"Updated Successfully" }
 fields:
   - _id: {type: hidden}
+  - dummyId: {type: hidden, value: "rand()", keyfield: true}
   - panel1: { type: panel, title: "Advance Request",class: "panel-mypanel"}
   - requestor: {required: true, keyfield: true, col: 2, panel: panel1, autocomplete: true }
   - requestorDept: {col: 2, panel: panel1, disabled: true, readonly: true}

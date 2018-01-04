@@ -1,0 +1,79 @@
+{
+  "_id": "party_design",
+  "_idfield": "_id",
+  "replace":  "{{include_created_modified.js}}",
+  "replace":  "{{include_sync.js}}",
+  "name": {
+    "editable": true,
+    "label": "Party Name",
+    "helptxt": "Party Name",
+    "type": "string"
+  },
+  "description": {
+    "editable": true,
+    "label": "Description",
+    "helptxt": "Description",
+    "type": "string"
+  },
+  "description": {
+    "editable": true,
+    "label": "Description",
+    "helptxt": "Description",
+    "type": "string"
+  },
+  "mode": {
+    "editable": true,
+    "helptxt": "Pref Mode",
+    "label": "Pref Mode",
+    "options": {
+      "": "",
+      "DD": "DD",
+      "BankDeposit": "BankDeposit",
+      "ECS": "ECS",
+      "Cheque": "Cheque",
+      "CreditCard": "CreditCard",
+      "Cash": "Cash",
+      "Online": "Online",
+      "eTransfer": "eTransfer",
+      "NEFT/RTGS": "NEFT/RTGS"
+    },
+    "required": 0,
+    "type": "select"
+  },
+  "bankAccounts": {
+    "_sub": 1,
+    "_type": "array",
+    "_id": {
+      "editable": true,
+      "helptxt": "bank accounts id",
+      "label": "bank accounts id",
+      "required": 0,
+      "implicit": {
+        "add": "always",
+        "edit": "none"
+      },
+      "type": "id"
+    },
+    "accountNum": {
+      "editable": true,
+      "helptxt": "AccountNum",
+      "label": "AccountNum",
+      "required": 0,
+      "type": "string"
+    },
+    "bankName": {
+      "editable": true,
+      "helptxt": "Bank Name",
+      "label": "Bank Name",
+      "required": 0,
+      "type": "string"
+    },
+    "ifscCode": {
+      "editable": true,
+      "helptxt": "IFSC Code",
+      "label": "IFSC Code",
+      "required": 0,
+      "type": "string"
+    }
+  }
+}
