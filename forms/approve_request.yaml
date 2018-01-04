@@ -1,0 +1,164 @@
+collName: lineitem
+mode: window
+window: {size: "90%", modal: true, resizable: true, draggable: true}
+xelectPlugin: chosen
+themeForm: bootstrap2
+header: "<h2>Approval</h2>"
+css:
+  cssText:
+    - |
+      .jform3 {
+        font-family: 'PT Sans', 'Source Sans Pro', sans-serif;
+      }
+      @keyframes smallToBig {
+        from { transform:scale(0.5); opacity:0; }
+        to { transform: scale(1); opacity:1; }
+      }
+
+      @keyframes fadeToTop {
+        from { transform: translateY(80px); opacity:0; }
+        to { transform: translateY(0); opacity:1; }
+      }
+
+      @keyframes myfadeIn {
+        from { transform: translateY(0); opacity:0; }
+        to { transform: translateY(0); opacity:1; }
+      }
+
+      @keyframes makeItBigger {
+        from { transform:scale(1); }
+        to { transform: scale(1.2); }
+      }
+
+      .animation1 {
+        animation: smallToBig 1.5s;
+        animation-fill-mode: both;
+      }
+      .animation2 {
+        animation: fadeToTop 0.8s;
+        animation-fill-mode: both;
+      }
+      .animation3 {
+        animation: myfadeIn 1s;
+        animation-fill-mode: both;
+      }
+      .numbercircle {
+        border-radius: 50%;
+        width: 1.1em;
+        height: 1.1em;
+        padding: 0.25em;
+
+        background: #fff;
+        border: 0.1em solid #666;
+        color: #6c6c6c;
+        text-align: center;
+        font: 12px Arial, sans-serif;
+      }
+      .nopadding {
+        padding: 0px;
+      }
+      .panel-mypanel {
+        border-color: #dddddd;
+        border-bottom: 1px solid #bcbcbc;
+      }
+      .jboxradio {
+        position: absolute;
+        display: none;
+      }
+      .jboxradio + label {
+        display: "inline-block";
+        background-color: trasnparent;
+        border: 2px solid #000082;
+        padding: 5px;
+        border-radius: 6px;
+        width: 90%;
+        text-align: center;
+        transition: all 1s ease;
+      }
+      .jboxradio:checked + label {
+        background-color: #000082;
+        color: #ffffff;
+        width: 100%;
+        height: 50px;
+        # animation: makeItBigger 1s;
+        transition: all 1s ease;
+      }
+      .rcol1 {
+        float: left; clear: left;
+        margin-left: 10px;
+      }
+      .rcoln {
+        float: left;
+        margin-left: 10px;
+      }
+
+      button.mybutton {
+        width: 200px;
+        padding: 10px;
+        font-size: 14pt;
+        background-color: #f1f1f1;
+        color: #000082;
+        border: 3px solid #000082;
+      }
+      .padtext {
+              padding: 1cm;
+              text-align:justify;
+          }
+      label#field023-label,#termsAndCondition-error{
+        padding-left:20px;
+        padding-right:20px;
+      }
+
+  googleFonts: ["PT Sans", "Source Sans Pro:600,600i", "Open Sans"]
+  urls:
+    - /css/nav-wizard.bootstrap.css
+  styles:
+    label: { "font-family": "'PT Sans', 'Source Sans Pro', Arial, sans-serif", "font-weight": "normal", "font-size": "11pt"}
+    ".jform3.parents(#formcontainer)": {"max-width": "900px", "margin": "0 auto", "background-color": "#eeeeee"}
+    ".jform3.parents(.window_panel)": {"max-width": "900px", "margin": "0 auto", "background-color": "#eeeeee"}
+    ".jform3.parents(body)": {"background-color": "#eeeeee "}
+    ".headerRow div:first-child": { padding-left: "0px", padding-right: "0px" }
+    ".containerRow, .buttonsRow": { padding-left: "5px", padding-right: "5px" }
+    ".containerRow .nav": { margin-left: "-20px", margin-right: "-20px", "addClass": "nav-wizard", "font-size": "11pt", "font-weight": "bold" }
+    #".panel-body": { "background-color": "#fffff" }
+    ".panelTitleSpan": { "font-family": "'PT Sans', 'Source Sans Pro', Arial, sans-serif", "font-weight": "bold", "font-size": "12pt", "color": "#6c6c6c" }
+    ".panel-heading": { "background-image": "url(none)", background: "linear-gradient(rgba(52, 27, 5, 0.57), rgb(238, 238, 238))" }
+    ".panel-default": { "border": "1px solid gray" }
+    ".panel-title a": { "color": "white" }
+    ".panel-body": { "background-color": "#eeeeee" }
+    # ".panel-primary": { "border-color": "#C16F00" }
+    # "form": { "ur": "/css/magic-check.css", margin-top: "0px" }
+    "input[type=checkbox]": { "removeClass": "magic-checkbox", "addClass": "jboxradio" }
+    "div.checkbox": { "margin-bottom": "5px" }
+    "input[type=radio]": {"addClass": "jboxradio", "removeClass": "magic-radio"}
+    "span.input-group-addon": { display: "none" }
+    "div.input-group": { removeClass: "input-group" }
+    "div.form-group": { "margin-bottom": "15px" }
+    "input[name=gender].parents(div.radio-container)": {"width": "50%"}
+    ".buttonsRow input[type=Reset]": { "display": "none"}
+    ".buttonsRow button[name=Previous]": { "display": "none"}
+    ".buttonsRow button[name=Next]": { "display": "none"}
+    ".buttonsRow input[type=submit]": { "addClass": "btn-lg", "width": "300px","height": "2cm" }
+    "button[name=proceed]": { "removeClass": "btn-primary", "addClass": "mybutton"}
+editButton: Approve
+editMessage: { "modal":"Approved Successfully" }
+disableAdd: disabled
+fields:
+  - _id: {type: hidden}
+  - type: {type: hidden}
+  - panel2: { type: panel, title: "Approvals",class: "panel-mypanel"}
+  - "approvals.0._id": { type: hidden, panel: panel2 }
+  - "approvals.0.approvedBy": { required: true, autocomplete: true, col: 2, panel: panel2 }
+  - "approvals.0.approvedDate": { required: true, col: 2, panel: panel2 }
+  - "approvals.0.approvedMode": { required: true, col: 2, panel: panel2 }
+  - panel1: { type: panel, title: "Advance Request",class: "panel-mypanel"}
+  - requestor: {disabled: true, readonly: true, col: 2, panel: panel1, autocomplete: true }
+  - requestorDept: {disabled: true, readonly: true, col: 2, panel: panel1}
+  - entity: {disabled: true, readonly: true, col: 2, panel: panel1}
+  - booksOfAccount: {disabled: true, readonly: true, col: 2, panel: panel1}
+  - partyName: {disabled: true, readonly: true, col: 2, panel: panel1}
+  - mode: {disabled: true, readonly: true, col: 2, panel: panel1}
+  - amount: {disabled: true, readonly: true, col: 2, panel: panel1}
+  - purpose: {disabled: true, readonly: true, col: 2, panel: panel1}
+
+
