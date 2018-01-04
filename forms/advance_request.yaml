@@ -148,9 +148,9 @@ resetAfterEdit: reset
 addMessage: { "modal":"Added Successfully" }
 editMessage: { "modal":"Updated Successfully" }
 fields:
-  - _id: {"type": "hidden"}
+  - _id: {type: hidden}
   - panel1: { type: panel, title: "Advance Request",class: "panel-mypanel"}
-  - requestor: {required: true, keyfield: true, col: 2, panel": panel1, autocomplete: true }
+  - requestor: {required: true, keyfield: true, col: 2, panel: panel1, autocomplete: true }
   - requestorDept: {col: 2, panel: panel1, disabled: true, readonly: true}
   - entity: {col: 2, panel: panel1, required: true}
   - booksOfAccount: {col: 2, panel: panel1, required: true}
