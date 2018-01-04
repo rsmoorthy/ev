@@ -146,7 +146,7 @@ disableAdd: disabled
 fields:
   - _id: {type: hidden}
   - type: {type: hidden}
-  - panel2: { type: panel, title: "Approvals",class: "panel-mypanel"}
+  - panel2: { type: panel, title: "Approvals",class: "panel-mypanel", limit: 3, multi: array}
   - "approvals.0._id": { type: hidden, panel: panel2 }
   - "approvals.0.approvedBy": { required: true, autocomplete: true, col: 2, panel: panel2 }
   - "approvals.0.approvedDate": { required: true, col: 2, panel: panel2 }
