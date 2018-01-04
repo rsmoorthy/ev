@@ -148,11 +148,11 @@ fields:
   - type: {type: hidden}
   - panel2: { type: panel, title: "Approvals",class: "panel-mypanel", limit: 3, multi: array}
   - "approvals.0._id": { type: hidden, panel: panel2 }
-  - "approvals.0.approvedBy": { required: true, autocomplete: true, col: 2, panel: panel2 }
+  - "approvals.0.approvedBy": { required: true, autocomplete: false, col: 2, panel: panel2 }
   - "approvals.0.approvedDate": { required: true, col: 2, panel: panel2 }
   - "approvals.0.approvedMode": { required: true, col: 2, panel: panel2 }
   - panel1: { type: panel, title: "Advance Request",class: "panel-mypanel"}
-  - requestor: {disabled: true, readonly: true, col: 2, panel: panel1, autocomplete: true }
+  - requestor: {disabled: true, readonly: true, col: 2, panel: panel1, autocomplete: false }
   - requestorDept: {disabled: true, readonly: true, col: 2, panel: panel1}
   - entity: {disabled: true, readonly: true, col: 2, panel: panel1}
   - booksOfAccount: {disabled: true, readonly: true, col: 2, panel: panel1}
